@@ -9,12 +9,36 @@ spring:
     nacos:
       config:
         server-addr: ${NACOS-HOST:60.205.168.11}:${NACOS-PORT:8848}
+#        server-addr: ${NACOS-HOST:10.200.120.6}:${NACOS-PORT:8848}
         file-extension: yml
       discovery:
         server-addr: ${NACOS-HOST:60.205.168.11}:${NACOS-PORT:8848}
+#        server-addr: ${NACOS-HOST:10.200.120.6}:${NACOS-PORT:8848}
     sentinel:
       transport:
         dashboard: 127.0.0.1:8080
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+feign:
+  sentinel:
+    enabled: true
+#feign:
+#  httpclient:
+#    enabled: true   # #让feign底层使用HttpClient去调用
+#    max-connections: 200 #  最大连接数
+#    max-connections-per-route: 50 #  为每个url请求设置最大连接数
+#  client:
+#    config:
+#      dafult:
+#        connectTimeout: 5000
+#        readTime: 5000
+#      product-center:  #     要调用服务的名称
+#        loggerLevel: FULL   # 日志级别
+#    sentinel:
+#      enabled: true   # 打开 Sentinel 对 Feign 的支持 这样@FeignClient的fallback 才会生效
 
 
 

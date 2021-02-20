@@ -21,6 +21,9 @@ public class Result<T> {
         this.msg = msg;
     }
 
+    public Result() {
+    }
+
     public static<T> Result<T> success(T data){
         return new Result<>(data, ResultCodeEnum.success.getCode(),ResultCodeEnum.success.getMsg());
     }

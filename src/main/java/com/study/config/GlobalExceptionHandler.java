@@ -34,15 +34,15 @@ public class GlobalExceptionHandler {
         return new Result(500, error);
     }
 
-    /**
-     * 运行异常拦截
-     * @param e
-     * @return
-     */
-    @ExceptionHandler(value = Exception.class)
-    public Result exception(Exception e) {
-        return new Result(500, e.getMessage());
-    }
+//    /**
+//     * 运行异常拦截
+//     * @param e
+//     * @return
+//     */
+//    @ExceptionHandler(value = Exception.class)
+//    public Result exception(Exception e) {
+//        return new Result(500, e.getMessage());
+//    }
 
     @ResponseBody
     @ExceptionHandler(value = BlockException.class)

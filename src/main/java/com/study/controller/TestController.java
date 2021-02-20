@@ -34,8 +34,8 @@ public class TestController {
     private RedissonConfig redissonConfig;
 
     @RequestMapping("/one")
-//    @SentinelResource("one")
     public Result getTest(){
+        log.info("有服务来调我了-------------");
         return Result.success("鸭儿了");
     }
 
