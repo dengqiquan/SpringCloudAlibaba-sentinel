@@ -25,20 +25,8 @@ management:
 feign:
   sentinel:
     enabled: true
-#feign:
-#  httpclient:
-#    enabled: true   # #让feign底层使用HttpClient去调用
-#    max-connections: 200 #  最大连接数
-#    max-connections-per-route: 50 #  为每个url请求设置最大连接数
-#  client:
-#    config:
-#      dafult:
-#        connectTimeout: 5000
-#        readTime: 5000
-#      product-center:  #     要调用服务的名称
-#        loggerLevel: FULL   # 日志级别
-#    sentinel:
-#      enabled: true   # 打开 Sentinel 对 Feign 的支持 这样@FeignClient的fallback 才会生效
+  hystrix:
+    enabled: true
 
 
 

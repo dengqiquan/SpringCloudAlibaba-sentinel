@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
  * @author: Deng Qi Qua_n
  * @date: 2021/2/19 16:17
  */
-@FeignClient(name = "olive-sentinel-client")
+@FeignClient(name = "olive-sentinel-client",fallbackFactory = FeignFactory.class)
 public interface OliveFeignService {
     /**
      * sentinelTest

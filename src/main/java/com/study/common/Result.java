@@ -31,6 +31,13 @@ public class Result<T> {
         return new Result<>(null, ResultCodeEnum.success.getCode(),ResultCodeEnum.success.getMsg());
     }
 
+    public static<T> Result<T> fail(T data){
+        return new Result<>(data, ResultCodeEnum.FAIL.getCode(),ResultCodeEnum.FAIL.getMsg());
+    }
+    public static<T> Result<T> fail(){
+        return new Result<>(null, ResultCodeEnum.FAIL.getCode(),ResultCodeEnum.FAIL.getMsg());
+    }
+
     public Result(T data, Integer code) {
         this.data = data;
         this.code = code;
