@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.study.mapper.SysLogMapper">
+    <sql id="tableName">
+        sys_log
+    </sql>
+
+    <sql id="baseColumn">
+        log_id,description,log_type,method,params,request_ip,time,username,address,browser,exception_detail,create_time
+    </sql>
+
+</mapper>

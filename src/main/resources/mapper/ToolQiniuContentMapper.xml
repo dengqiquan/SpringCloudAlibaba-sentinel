@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.study.mapper.ToolQiniuContentMapper">
+    <sql id="tableName">
+        tool_qiniu_content
+    </sql>
+
+    <sql id="baseColumn">
+        content_id,bucket,name,size,type,url,suffix,update_time
+    </sql>
+
+</mapper>

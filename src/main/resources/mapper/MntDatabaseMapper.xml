@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.study.mapper.MntDatabaseMapper">
+    <sql id="tableName">
+        mnt_database
+    </sql>
+
+    <sql id="baseColumn">
+        db_id,name,jdbc_url,user_name,pwd,create_by,update_by,create_time,update_time
+    </sql>
+
+</mapper>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.study.mapper.CodeGenConfigMapper">
+    <sql id="tableName">
+        code_gen_config
+    </sql>
+
+    <sql id="baseColumn">
+        config_id,table_name,author,cover,module_name,pack,path,api_path,prefix,api_alias
+    </sql>
+
+</mapper>

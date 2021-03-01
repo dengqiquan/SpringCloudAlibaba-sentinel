@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.study.mapper.MntDeployHistoryMapper">
+    <sql id="tableName">
+        mnt_deploy_history
+    </sql>
+
+    <sql id="baseColumn">
+        history_id,app_name,deploy_date,deploy_user,ip,deploy_id
+    </sql>
+
+</mapper>

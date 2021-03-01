@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.study.mapper.AgentMapper">
+    <sql id="tableName">
+        agent
+    </sql>
+
+    <sql id="baseColumn">
+        id,user_id,company,name,phone,job,sex,beneficiar_name,corporate_bank,corporate_bank_account,pid,level,create_time,update_time,username,active_status,active_time,open_time,email,discount,cooperation_model,customer_code,contract_body,our_contracted_company,agent_discount
+    </sql>
+
+
+
+</mapper>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.study.mapper.CodeColumnConfigMapper">
+    <sql id="tableName">
+        code_column_config
+    </sql>
+
+    <sql id="baseColumn">
+        column_id,table_name,column_name,column_type,dict_name,extra,form_show,form_type,key_type,list_show,not_null,query_type,remark,date_annotation
+    </sql>
+
+</mapper>
