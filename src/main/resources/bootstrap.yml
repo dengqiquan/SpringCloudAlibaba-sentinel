@@ -1,19 +1,6 @@
 server:
   port: 9003
 spring:
-  main:
-    banner-mode: off
-    kafka:
-      bootstrap-servers: 127.0.0.1:9092 #指定kafka server的地址，集群配多个，中间，逗号隔开
-      producer:
-        key-serializer: org.apache.kafka.common.serialization.StringSerializer
-        value-serializer: org.apache.kafka.common.serialization.StringSerializer
-      consumer:
-        group-id: default_consumer_group #群组ID
-        enable-auto-commit: true
-        auto-commit-interval: 1000
-        key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-        value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
   application:
     name: xinchao-study
   profiles:
@@ -30,6 +17,37 @@ spring:
     sentinel:
       transport:
         dashboard: 127.0.0.1:8080
+  kafka:
+    bootstrap-servers: 10.200.180.128:9092
+    producer:
+      # 重试次数，默认Integer.MAX_VALUE
+      retries: 1
+      # 同一批次内存大小（默认16K）
+      batch-size: 16384
+      # 生产者内存缓存区大小(32M)
+      buffer-memory: 33554432
+      # key和value的序列化（默认，可以不设置）
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      # ack应答机制，默认1，即只需要确认leader收到消息
+      acks: 1
+        # springboot1.5.16自动装配中不支持properties下的其他配置，不知道为啥。2.x版本可以
+        #properties:
+      # 使用自定义的分区选择器
+      #{partitioner.class: com.msy.kafka.MyPartition, acks: all}
+    consumer:
+      group-id: test
+      enable-auto-commit: false
+      # earliest：从头开始消费   latest：从最新的开始消费   默认latest
+      auto-offset-reset: latest
+      # key和value反序列化（默认，可以不设置）
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    listener:
+      # 消费者并发能力
+      concurrency: 6
+      # 设置手动提交的时候，需要设置ackMode
+      ack-mode: MANUAL
 management:
   endpoints:
     web:

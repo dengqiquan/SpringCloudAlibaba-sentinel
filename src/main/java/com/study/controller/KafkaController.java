@@ -32,4 +32,14 @@ public class KafkaController {
         return Result.success("发送成功");
     }
 
+    @PostMapping("/demo")
+    public Result topicsDemo(){
+        SysUser user = new SysUser();
+        user.setUsername("curry");
+        log.info("发送消息:"+JSONObject.toJSONString(user));
+        kafkaTemplate.send("demo", JSONObject.toJSONString(user));
+        log.info("发送消息kafka----success");
+        return Result.success("发送成功");
+    }
+
 }
